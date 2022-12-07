@@ -1,0 +1,7 @@
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.csproj.AssemblyReference.cache
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.frmSnake.resources
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.csproj.GenerateResource.cache
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.AssemblyInfoInputs.cache
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.AssemblyInfo.cs
+C:\Users\Marcel\Desktop\Schule\Software\SnakeSchule\SnakeProjekt\obj\Debug\net6.0-windows\SnakeProjekt.csproj.CoreCompileInputs.cache
