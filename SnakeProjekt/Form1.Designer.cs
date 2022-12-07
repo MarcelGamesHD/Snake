@@ -52,7 +52,7 @@
             // 
             // picSpielfeld
             // 
-            this.picSpielfeld.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.picSpielfeld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(91)))), ((int)(((byte)(47)))));
             this.picSpielfeld.Location = new System.Drawing.Point(12, 12);
             this.picSpielfeld.Name = "picSpielfeld";
             this.picSpielfeld.Size = new System.Drawing.Size(600, 600);

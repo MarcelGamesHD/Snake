@@ -104,7 +104,25 @@ namespace SnakeProjekt
         // Beschreibt den Start/Neustart des Spieles.
         private void RestartGame()
         {
+            maxWidth = picSpielfeld.Width / Einstellungen.Width;
+            maxHeight = picSpielfeld.Height / Einstellungen.Height;
 
+            Snake.Clear();
+            btnStart.Enabled = false;
+            btnScreen.Enabled = false;
+            lblScore.Text = "Score: " + score;
+
+            Kreis head = new Kreis{x = 10, y = 5};
+            Snake.Add(head); // Der Kopf wird als Teil der Schlange zur Liste hinzugefügt
+
+            for (int i=0; i<10; i++)
+            {
+                Kreis body = new Kreis();
+                Snake.Add(body);
+            }
+
+            food = new Kreis { x = rand.Next(2, maxWidth), y = rand.Next(2, maxHeight) };
+            GameTimer.Start();
         }
         // Beschreibt das essen des Essen.
         private void EatFood()
