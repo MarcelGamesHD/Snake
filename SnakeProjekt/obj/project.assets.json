@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\Sn\\SnakeProjekt\\SnakeProjekt.csproj",
+      "projectUniqueName": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj",
       "projectName": "SnakeProjekt",
-      "projectPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\Sn\\SnakeProjekt\\SnakeProjekt.csproj",
+      "projectPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj",
       "packagesPath": "C:\\Users\\Marcel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\Sn\\SnakeProjekt\\obj\\",
+      "outputPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
