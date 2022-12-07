@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj": {}
+    "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\reg\\SnakeProjekt\\SnakeProjekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj": {
+    "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\reg\\SnakeProjekt\\SnakeProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj",
+        "projectUniqueName": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\reg\\SnakeProjekt\\SnakeProjekt.csproj",
         "projectName": "SnakeProjekt",
-        "projectPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\SnakeProjekt.csproj",
+        "projectPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\reg\\SnakeProjekt\\SnakeProjekt.csproj",
         "packagesPath": "C:\\Users\\Marcel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\snief\\SnakeProjekt\\obj\\",
+        "outputPath": "C:\\Users\\Marcel\\Desktop\\Schule\\Software\\reg\\SnakeProjekt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

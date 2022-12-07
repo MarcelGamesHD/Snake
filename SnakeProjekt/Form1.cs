@@ -14,6 +14,7 @@ using System.Drawing.Imaging;
 
 namespace SnakeProjekt
 {
+    // Kommentar von Marcel
     public partial class frmSnake : Form
     {
         // Eine Liste namens "Snake" wird erstellt
