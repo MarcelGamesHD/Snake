@@ -94,7 +94,70 @@ namespace SnakeProjekt
         // Beschreibt das GameTimerEvent bei "Ablauf" der Zeit.
         private void GameTimerEvent(object sender, EventArgs e)
         {
+            if (goLeft)
+            {
+                Einstellungen.directions = "Links";
+            }
 
+            if (goRight)
+            {
+                Einstellungen.directions = "Rechts";
+            }
+
+            if (goUp)
+            {
+                Einstellungen.directions = "Oben";
+            }
+
+            if (goDown)
+            {
+                Einstellungen.directions = "Unten";
+            }
+
+            for (int i = Snake.Count - 1; i >= 0; i--)
+            {
+                if (i == 0)
+                {
+                    switch (Einstellungen.directions)
+                    {
+                        case "Links":
+                            Snake[i].x--;
+                            break;
+                        case "Rechts":
+                            Snake[i].x++;
+                            break;
+                        case "Oben":
+                            Snake[i].y++;
+                            break;
+                        case "Unten":
+                            Snake[i].y--;
+                            break;
+                    }
+
+                    if (Snake[i].x < 0)
+                    {
+                        Snake[i].x = maxWidth;
+                    }
+                    if (Snake[i].x > maxWidth)
+                    {
+                        Snake[i].x = 0;
+                    }
+                    if (Snake[i].y < 0)
+                    {
+                        Snake[i].y = maxHeight;
+                    }
+                    if (Snake[i].y > maxHeight)
+                    {
+                        Snake[i].y = 0;
+                    }
+                }
+                else
+                {
+                    Snake[i].x = Snake[i - 1].x;
+                    Snake[i].y = Snake[i - 1].y;
+                }
+            }
+            picSpielfeld.Invalidate();
         }
         // Beschreibt das neuladen der Spielfeldes, wenn das GameTimerEvent
         // ausgelöst wird.
