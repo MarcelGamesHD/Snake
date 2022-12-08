@@ -100,7 +100,32 @@ namespace SnakeProjekt
         // ausgelöst wird.
         private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
         {
+            Graphics Spielfeld = e.Graphics;
+            Brush SnakeColour;
 
+            for (int i = 0; i < Snake.Count; i++)
+            {
+                if (i == 0)
+                {
+                    SnakeColour = Brushes.DarkGreen;
+                }
+                else
+                {
+                    SnakeColour = Brushes.ForestGreen;
+                }
+                Spielfeld.FillEllipse(SnakeColour, new Rectangle
+                    (
+                    Snake[i].x * Einstellungen.Width,
+                    Snake[i].y * Einstellungen.Height,
+                    Einstellungen.Width,Einstellungen.Height
+                    ));
+            }
+            Spielfeld.FillEllipse(Brushes.DarkRed, new Rectangle
+                    (
+                    food.x * Einstellungen.Width,
+                    food.y * Einstellungen.Height,
+                    Einstellungen.Width, Einstellungen.Height
+                    ));
         }
         // Beschreibt den Start/Neustart des Spieles.
         private void RestartGame()
