@@ -98,17 +98,14 @@ namespace SnakeProjekt
             {
                 Einstellungen.directions = "Links";
             }
-
             if (goRight)
             {
                 Einstellungen.directions = "Rechts";
             }
-
             if (goUp)
             {
                 Einstellungen.directions = "Oben";
             }
-
             if (goDown)
             {
                 Einstellungen.directions = "Unten";
