@@ -17,11 +17,9 @@ namespace SnakeProjekt
     // Kommentar von Marcel
     public partial class frmSnake : Form
     {
-        // Eine Liste namens "Snake" wird erstellt
         private List<Kreis> Snake = new List<Kreis>();
         private Kreis food = new Kreis();
 
-        // Maximale Width und Height, welche erreichbar sind
         int maxWidth;
         int maxHeight;
 
@@ -162,7 +160,6 @@ namespace SnakeProjekt
         {
             Graphics Spielfeld = e.Graphics;
             Brush SnakeColour;
-
             for (int i = 0; i < Snake.Count; i++)
             {
                 if (i == 0)
