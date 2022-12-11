@@ -87,70 +87,116 @@ namespace SnakeProjekt
         // dass er abgespeichert werden kann.
         private void TakeScreenshot(object sender, EventArgs e)
         {
+            // Neues Label erstellen und zur PictureBox hinzufügen
+            Label caption = new Label();
+            caption.Text = "Ich erzielte: " + score + " Punkte und mein Highscore ist: " + highScore;
+            caption.Font = new Font("Ariel", 12, FontStyle.Bold);
+            caption.ForeColor = Color.Black;
+            caption.AutoSize = false;
+            caption.Width = picSpielfeld.Width;
+            caption.Height = 30;
+            caption.TextAlign = ContentAlignment.MiddleLeft;
+            picSpielfeld.Controls.Add(caption);
 
+            // Erstellt eine neue SaveFileDialog Box
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.FileName = "Snake Game Snapshot";
+            dialog.DefaultExt = "jpg";
+            dialog.Filter = "JPG Image File | *.jpg";
+            dialog.ValidateNames = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                int width = Convert.ToInt32(picSpielfeld.Width);
+                int height = Convert.ToInt32(picSpielfeld.Height);
+                Bitmap bmp = new Bitmap(width, height);
+                picSpielfeld.DrawToBitmap(bmp, new Rectangle(0, 0, width, Height));
+                bmp.Save(dialog.FileName, ImageFormat.Jpeg);
+                picSpielfeld.Controls.Remove(caption);
+            }
         }
         // Beschreibt das GameTimerEvent bei "Ablauf" der Zeit.
         private void GameTimerEvent(object sender, EventArgs e)
         {
             if (goLeft)
             {
-                Einstellungen.directions = "Links";
+                Einstellungen.directions = "left";
             }
             if (goRight)
             {
-                Einstellungen.directions = "Rechts";
+                Einstellungen.directions = "right";
             }
             if (goUp)
             {
-                Einstellungen.directions = "Oben";
+                Einstellungen.directions = "up";
             }
             if (goDown)
             {
-                Einstellungen.directions = "Unten";
-            }
+                Einstellungen.directions = "down";
 
+            }
             for (int i = Snake.Count - 1; i >= 0; i--)
             {
                 if (i == 0)
                 {
                     switch (Einstellungen.directions)
                     {
-                        case "Links":
+                        case "left":
                             Snake[i].x--;
                             break;
-                        case "Rechts":
+                        case "right":
                             Snake[i].x++;
                             break;
-                        case "Oben":
+                        case "down":
                             Snake[i].y++;
                             break;
-                        case "Unten":
+                        case "up":
                             Snake[i].y--;
                             break;
                     }
 
                     if (Snake[i].x < 0)
                     {
-                        Snake[i].x = maxWidth;
+                        GameOver();
                     }
                     if (Snake[i].x > maxWidth)
                     {
-                        Snake[i].x = 0;
+                        GameOver();
                     }
                     if (Snake[i].y < 0)
                     {
-                        Snake[i].y = maxHeight;
+                        GameOver();
                     }
                     if (Snake[i].y > maxHeight)
                     {
-                        Snake[i].y = 0;
+                        GameOver();
                     }
+
+                    //  Körper = Snake[j]   Kopf = Snake[i]
+
+                    if (Snake[i].x == food.x && Snake[i].y == food.y)
+                    {
+                        EatFood();
+                    }
+
+                    for (int j = 1; j < Snake.Count; j++)
+                    {
+                        if (Snake[i].x == Snake[j].x && Snake[i].y == Snake[j].y)
+                        {
+                            GameOver();
+                        }
+
+                    }
+
+
                 }
+
                 else
                 {
                     Snake[i].x = Snake[i - 1].x;
                     Snake[i].y = Snake[i - 1].y;
                 }
+
             }
             picSpielfeld.Invalidate();
         }
@@ -174,7 +220,7 @@ namespace SnakeProjekt
                     (
                     Snake[i].x * Einstellungen.Width,
                     Snake[i].y * Einstellungen.Height,
-                    Einstellungen.Width,Einstellungen.Height
+                    Einstellungen.Width, Einstellungen.Height
                     ));
             }
             Spielfeld.FillEllipse(Brushes.DarkRed, new Rectangle
@@ -193,12 +239,12 @@ namespace SnakeProjekt
             Snake.Clear();
             btnStart.Enabled = false;
             btnScreen.Enabled = false;
-            lblScore.Text = "Score: " + score;
-
+            lblScore.Text = "Score: ";
+            score = 0;
             Kreis head = new Kreis{x = 10, y = 5};
             Snake.Add(head); // Der Kopf wird als Teil der Schlange zur Liste hinzugefügt
 
-            for (int i=0; i<10; i++)
+            for (int i=0; i<2; i++)
             {
                 Kreis body = new Kreis();
                 Snake.Add(body);
@@ -210,12 +256,34 @@ namespace SnakeProjekt
         // Beschreibt das essen des Essen.
         private void EatFood()
         {
+            score += 1;
 
+            lblScore.Text = "Score: " + score;
+
+            Kreis body = new Kreis
+            {
+                x = Snake[Snake.Count - 1].x,
+                y = Snake[Snake.Count - 1].y
+            };
+
+            Snake.Add(body);
+            food = new Kreis { x = rand.Next(2, maxWidth), y = rand.Next(2, maxHeight) };
         }
         // Beschreibt das Ende des Spieles.
         private void GameOver()
         {
+            GameTimer.Stop();
+            btnStart.Enabled = true;
+            btnScreen.Enabled = true;
 
+            if (score > highScore)
+            {
+                highScore = score;
+
+                lblHighscore.Text = "Highscore: " + Environment.NewLine + highScore;
+                lblHighscore.ForeColor = Color.Maroon;
+                lblHighscore.TextAlign = ContentAlignment.MiddleCenter;
+            }
         }
     }
 }
