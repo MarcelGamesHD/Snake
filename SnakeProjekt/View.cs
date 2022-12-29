@@ -280,7 +280,7 @@ namespace SnakeProjekt
             {
                 highScore = score;
 
-                lblHighscore.Text = "Highscore: " + Environment.NewLine + highScore;
+                lblHighscore.Text = "Highscore: " + highScore;
                 lblHighscore.ForeColor = Color.Maroon;
                 lblHighscore.TextAlign = ContentAlignment.MiddleCenter;
             }
