@@ -13,7 +13,6 @@ namespace SnakeProjekt
         public int x { get; set;  }
         public int y { get; set; }
 
-        // Konstruktor
         public Kreis()
         {
             x = 0;
